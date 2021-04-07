@@ -13,7 +13,12 @@ m_input.grid(column=1, row=0)
 result = tkinter.Label(text="0")
 result.grid(column=1, row=1)
 
-calc_button = tkinter.Button(text="Calculate")
+def get_result():
+    value = int(m_input.get())
+    calc = round(value * 1.6, 1)
+    result.config(text=f"{calc}")
+
+calc_button = tkinter.Button(text="Calculate", command=get_result)
 calc_button.grid(column=1, row=2)
 
 miles_label = tkinter.Label(text="Miles")
